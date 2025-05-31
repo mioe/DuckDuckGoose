@@ -11,7 +11,7 @@ import SwiftUI
 struct DuckDuckGooseApp: App {
 	var body: some Scene {
 		WindowGroup {
-			ContentView()
-		}
+			DeadlineView()
+		}.windowStyle(.hiddenTitleBar)
 	}
 }

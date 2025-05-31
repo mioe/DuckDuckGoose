@@ -28,7 +28,7 @@ struct DeadlineEvent: View {
 			.shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: 5)
 		}
 		.padding(.leading, 4)
-		.overlay {
+		.background {
 			ZStack {
 				LeftMark()
 			}
@@ -40,8 +40,8 @@ struct DeadlineEvent: View {
 		VStack {
 			CategoryLine()
 				.fill(.green)
-				.clipShape(RoundedRectangle(cornerRadius: 16))
-		}.padding(.vertical, 4)
+				.clipShape(RoundedRectangle(cornerRadius: 10))
+		}.padding(.vertical, 6)
 	}
 	
 	private struct CategoryLine: Shape {

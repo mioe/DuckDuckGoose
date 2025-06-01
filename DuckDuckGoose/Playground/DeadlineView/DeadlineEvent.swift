@@ -30,12 +30,20 @@ struct DeadlineEvent: View {
 						.padding(.leading)
 						.overlay(alignment: .leading) {
 							VStack(alignment: .leading) {
-								Image(systemName: "screwdriver")
-									.foregroundColor(.white)
-									.padding(.all, 2)
-									.background(eventColor)
+								Button {
+									withAnimation(.easeInOut(duration: 0.3)) {
+										eventColor = eventColor == .blue ? .green : .blue
+										isExpanded.toggle()
+									}
+								} label: {
+									Image(systemName: "screwdriver")
+										.foregroundColor(.white)
+										.padding(.all, 4)
+										.background(eventColor)
+								}
+								.buttonStyle(PlainButtonStyle())
 							}
-							.padding(.leading, -16)
+							.padding(.leading, -18)
 						}
 						Spacer()
 						Button {
@@ -45,6 +53,8 @@ struct DeadlineEvent: View {
 						} label: {
 							Image(systemName: "chevron.up")
 								.rotationEffect(.degrees(isExpanded ? 0 : -180))
+								.padding(.all)
+								.background(eventColor.opacity(0.1))
 						}
 						.buttonStyle(PlainButtonStyle())
 					}

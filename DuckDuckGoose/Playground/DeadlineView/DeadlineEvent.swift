@@ -26,23 +26,14 @@ struct DeadlineEvent: View {
 								.fontWeight(.semibold)
 							Text("11:10–12:45")
 								.font(.subheadline)
+								.foregroundColor(.secondary)
 						}
-						.padding(.leading)
+						.padding(.leading, 18)
 						.overlay(alignment: .leading) {
-							VStack(alignment: .leading) {
-								Button {
-									withAnimation(.easeInOut(duration: 0.3)) {
-										eventColor = eventColor == .blue ? .green : .blue
-										isExpanded.toggle()
-									}
-								} label: {
-									Image(systemName: "screwdriver")
-										.foregroundColor(.white)
-										.padding(.all, 4)
-										.background(eventColor)
-								}
-								.buttonStyle(PlainButtonStyle())
-							}
+							Image(systemName: "screwdriver")
+								.foregroundColor(.white)
+								.padding(.all, 4)
+								.background(eventColor)
 							.padding(.leading, -18)
 						}
 						Spacer()
@@ -51,10 +42,14 @@ struct DeadlineEvent: View {
 								isExpanded.toggle()
 							}
 						} label: {
-							Image(systemName: "chevron.up")
-								.rotationEffect(.degrees(isExpanded ? 0 : -180))
-								.padding(.all)
-								.background(eventColor.opacity(0.1))
+							VStack {
+								Image(systemName: "chevron.up")
+									.rotationEffect(.degrees(isExpanded ? 0 : -180))
+							}
+							.padding(.vertical, 9)
+							.padding(.horizontal, 6)
+							.background(.opacity(0.0000001))
+							.clipShape(Circle())
 						}
 						.buttonStyle(PlainButtonStyle())
 					}

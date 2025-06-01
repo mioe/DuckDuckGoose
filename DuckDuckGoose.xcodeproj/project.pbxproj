@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37E628622DEC4D5F0050DCD0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 37E628612DEC4D540050DCD0 /* .gitignore */; };
 		37FB0AD92DEA36920077B619 /* .editorconfig in Resources */ = {isa = PBXBuildFile; fileRef = 37FB0AD82DEA368C0077B619 /* .editorconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37E628612DEC4D540050DCD0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		37FB0AC92DEA36820077B619 /* DuckDuckGoose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuckDuckGoose.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37FB0AD82DEA368C0077B619 /* .editorconfig */ = {isa = PBXFileReference; lastKnownFileType = text; path = .editorconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,6 +39,7 @@
 		37FB0AC02DEA36820077B619 = {
 			isa = PBXGroup;
 			children = (
+				37E628612DEC4D540050DCD0 /* .gitignore */,
 				37FB0AD82DEA368C0077B619 /* .editorconfig */,
 				37FB0ACB2DEA36820077B619 /* DuckDuckGoose */,
 				37FB0ACA2DEA36820077B619 /* Products */,
@@ -115,6 +118,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37E628622DEC4D5F0050DCD0 /* .gitignore in Resources */,
 				37FB0AD92DEA36920077B619 /* .editorconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

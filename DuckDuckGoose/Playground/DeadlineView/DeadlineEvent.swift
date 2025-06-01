@@ -15,10 +15,33 @@ struct DeadlineEvent: View {
 		VStack {
 			VStack {
 				DisclosureGroup(isExpanded: $isExpanded) {
-					VStack(alignment: .leading) {
-						Text("Hello world")
+					VStack {
+						VStack(spacing: 4) {
+							TodoItem(text: "Reproduce the issue-localy")
+							TodoItem(text: "Review beckend refresh endpoint")
+							TodoItem(text: "Test with expired token scenerio")
+						}
+						.padding(.vertical, 8)
+						.padding(.horizontal, 9)
+						Divider()
+						HStack {
+							Text("Backend")
+								.font(.subheadline)
+								.foregroundColor(.white)
+								.padding(.horizontal, 12)
+								.padding(.vertical, 4)
+								.background(
+									LinearGradient(
+										colors: [eventColor.opacity(0.8), eventColor],
+										startPoint: .leading,
+										endPoint: .bottom
+									)
+								)
+								.clipShape(Capsule())
+							Spacer()
+						}
+						.padding(.top, 6)
 					}
-					.background()
 				} label: {
 					HStack {
 						VStack(alignment: .leading) {
@@ -34,7 +57,7 @@ struct DeadlineEvent: View {
 								.foregroundColor(.white)
 								.padding(.all, 4)
 								.background(eventColor)
-							.padding(.leading, -18)
+								.padding(.leading, -18)
 						}
 						Spacer()
 						Button {
@@ -63,6 +86,19 @@ struct DeadlineEvent: View {
 			ZStack {
 				LeftMark()
 			}
+		}
+	}
+	
+	@ViewBuilder
+	private func TodoItem(text: String = "") -> some View {
+		HStack {
+			Image(systemName: "checkmark.circle")
+				.font(.subheadline)
+				.foregroundColor(.secondary)
+			Text(text)
+				.font(.subheadline)
+				.foregroundColor(.secondary)
+			Spacer()
 		}
 	}
 	

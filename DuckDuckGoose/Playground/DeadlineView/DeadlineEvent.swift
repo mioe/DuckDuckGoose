@@ -8,41 +8,50 @@
 import SwiftUI
 
 struct DeadlineEvent: View {
-	@State private var topExpanded: Bool = true
+	@State private var isExpanded: Bool = true
+	@State private var eventColor: Color = .blue
 	
 	var body: some View {
 		VStack {
 			VStack {
-				DisclosureGroup(isExpanded: $topExpanded) {
-					VStack {
+				DisclosureGroup(isExpanded: $isExpanded) {
+					VStack(alignment: .leading) {
 						Text("Hello world")
-						Text("Hello world")
-						Text("Hello world")
-						Text("Hello world")
-					}.background()
+					}
+					.background()
 				} label: {
-					HStack(alignment: .top) {
-						Image(systemName: "screwdriver")
+					HStack {
 						VStack(alignment: .leading) {
 							Text("Fix token refresh issue")
 								.fontWeight(.semibold)
 							Text("11:10–12:45")
 								.font(.subheadline)
 						}
+						.padding(.leading)
+						.overlay(alignment: .leading) {
+							VStack(alignment: .leading) {
+								Image(systemName: "screwdriver")
+									.foregroundColor(.white)
+									.padding(.all, 2)
+									.background(eventColor)
+							}
+							.padding(.leading, -16)
+						}
 						Spacer()
 						Button {
 							withAnimation {
-								topExpanded.toggle()
+								isExpanded.toggle()
 							}
 						} label: {
 							Image(systemName: "chevron.up")
+								.rotationEffect(.degrees(isExpanded ? 0 : -180))
 						}
+						.buttonStyle(PlainButtonStyle())
 					}
 				}
 			}
 			.padding()
 			.background(.regularMaterial, in: RoundedRectangle(cornerRadius: 16))
-			.shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: 5)
 		}
 		.padding(.leading, 4)
 		.background {
@@ -56,7 +65,7 @@ struct DeadlineEvent: View {
 	private func LeftMark() -> some View {
 		VStack {
 			CategoryLine()
-				.fill(.green)
+				.fill(eventColor)
 				.clipShape(RoundedRectangle(cornerRadius: 10))
 		}.padding(.vertical, 6)
 	}

@@ -8,19 +8,34 @@
 import SwiftUI
 
 struct DeadlineEvent: View {
+	@State private var topExpanded: Bool = true
+	
 	var body: some View {
 		VStack {
 			VStack {
-				HStack(alignment: .top) {
-					Image(systemName: "screwdriver")
-					VStack(alignment: .leading) {
-						Text("Fix token refresh issue")
-							.fontWeight(.semibold)
-						Text("11:10–12:45")
-							.font(.subheadline)
+				DisclosureGroup(isExpanded: $topExpanded) {
+					VStack {
+						Text("Hello world")
+						Text("Hello world")
+						Text("Hello world")
+						Text("Hello world")
+					}.background()
+				} label: {
+					HStack(alignment: .top) {
+						Image(systemName: "screwdriver")
+						VStack(alignment: .leading) {
+							Text("Fix token refresh issue")
+								.fontWeight(.semibold)
+							Text("11:10–12:45")
+								.font(.subheadline)
+						}
+						Spacer()
+						Button {
+							topExpanded.toggle()
+						} label: {
+							Image(systemName: "chevron.up")
+						}
 					}
-					Spacer()
-					Image(systemName: "clock")
 				}
 			}
 			.padding()

@@ -15,11 +15,6 @@ struct DeadlineView: View {
 			Spacer()
 		}
 		.padding()
-//		.background(
-//			Image("chihiro043")
-//				.resizable()
-//				.aspectRatio(contentMode: .fill)
-//		)
 	}
 }
 

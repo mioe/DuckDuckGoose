@@ -31,7 +31,9 @@ struct DeadlineEvent: View {
 						}
 						Spacer()
 						Button {
-							topExpanded.toggle()
+							withAnimation {
+								topExpanded.toggle()
+							}
 						} label: {
 							Image(systemName: "chevron.up")
 						}

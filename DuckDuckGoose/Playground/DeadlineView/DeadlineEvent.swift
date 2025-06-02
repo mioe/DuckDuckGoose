@@ -71,8 +71,7 @@ struct DeadlineEvent: View {
 							}
 							.padding(.vertical, 9)
 							.padding(.horizontal, 6)
-							.background(.opacity(0.0000001))
-							.clipShape(Circle())
+							.contentShape(Circle())
 						}
 						.buttonStyle(PlainButtonStyle())
 					}

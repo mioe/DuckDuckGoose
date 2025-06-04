@@ -39,6 +39,14 @@ struct DeadlineEvent: View {
 								)
 								.clipShape(Capsule())
 							Spacer()
+							VStack {
+								Image("dragna")
+									.resizable()
+									.aspectRatio(contentMode: .fit)
+							}
+							.border(.white)
+							.clipShape(Circle())
+							.frame(width: 24, height: 24)
 						}
 						.padding(.top, 6)
 					}
